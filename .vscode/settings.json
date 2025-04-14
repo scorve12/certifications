@@ -1,10 +1,11 @@
+//vs코드 설정파일 입니다.
 {
-    "code-runner.clearPreviousOutput": true,
-    "code-runner.runInTerminal": true,
-    "code-runner.preserveFocus": false,
-    "code-runner.ignoreSelection": true,
-    "code-runner.saveFileBeforeRun": true,
-    "code-runner.showExecutionMessage": false,
+    "code-runner.clearPreviousOutput": true, // 이전 출력결과를 지웁니다. false로 설정하면 이전 출력결과를 지우지 않습니다.
+    "code-runner.runInTerminal": true, // 터미널에서 실행합니다. false로 설정하면 출력창(OUTPUT)에서 실행합니다.
+    "code-runner.preserveFocus": false, // 터미널에서 실행한 후 포커스를 유지합니다. true로 설정하면 포커스를 유지합니다.
+    "code-runner.ignoreSelection": true, // 선택된 코드가 없을 때에도 실행합니다. false로 설정하면 선택된 코드가 없을 때에는 실행하지 않습니다.
+    "code-runner.saveFileBeforeRun": true, // 파일을 저장한 후 실행합니다. false로 설정하면 저장하지 않고 실행합니다.
+    "code-runner.showExecutionMessage": false, // 실행 후 메시지를 표시합니다. true로 설정하면 메시지를 표시합니다.
     
     // Windows 설정
     "code-runner.executorMapByGlob": {
