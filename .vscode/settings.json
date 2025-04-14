@@ -15,7 +15,7 @@
             "java": "cd \"$dir\" && echo \n==========code start==========\n && javac \"$fileName\" && java \"$fileNameWithoutExt\" && echo \n==========code end========== && del /f *.class",
             "c": "cd \"$dir\" && echo \n==========code start==========\n && gcc \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo \n==========code end========== && del \"$fileNameWithoutExt.exe\"",
             "cpp": "cd \"$dir\" && echo \n==========code start==========\n && g++ \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo \n==========code end========== && del \"$fileNameWithoutExt.exe\"",
-            "python": "echo \n==========code start==========\n && python -u \"$file\" && echo \n==========code end==========",
+            "python": "echo \n==========code start==========\n && python3 -u \"$file\" && echo \n==========code end==========",
             "ruby": "echo \n==========code start==========\n && ruby \"$file\" && echo \n==========code end==========",
             "go": "echo \n==========code start==========\n && go run \"$file\" && echo \n==========code end=========="
         }
@@ -28,7 +28,7 @@
         "java": "cd \"$dir\" && echo '\n==========code start==========\n' && javac \"$fileName\" && java \"$fileNameWithoutExt\" && echo '\n==========code end==========' && rm -f *.class",
         "c": "cd \"$dir\" && echo '\n==========code start==========\n' && gcc \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '\n==========code end==========' && rm -f \"$dir$fileNameWithoutExt\"",
         "cpp": "cd \"$dir\" && echo '\n==========code start==========\n' && g++ \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '\n==========code end==========' && rm -f \"$dir$fileNameWithoutExt\"",
-        "python": "echo '\n==========code start==========\n' && python -u \"$file\" && echo '\n==========code end=========='",
+        "python": "cd \"$dir\" && echo '\n==========code start==========' && python3 -u \"$fileName\" && echo '==========code end=========='",
         "ruby": "echo '\n==========code start==========\n' && ruby \"$file\" && echo '\n==========code end=========='",
         "go": "echo '\n==========code start==========\n' && go run \"$file\" && echo '\n==========code end=========='"
     }
