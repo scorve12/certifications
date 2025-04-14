@@ -11,8 +11,8 @@
         "$isWindows": {
             "javascript": "echo \n==========code start========== && node \"$file\" && echo ==========code end==========",
             "java": "cd \"$dir\" && echo \n==========code start========== && javac \"$fileName\" && java \"$fileNameWithoutExt\" && echo ==========code end========== && del /f *.class",
-            "c": "cd \"$dir\" && echo \n==========code start========== && gcc \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo ==========code end==========",
-            "cpp": "cd \"$dir\" && echo \n==========code start========== && g++ \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo ==========code end==========",
+            "c": "cd \"$dir\" && echo \n==========code start========== && gcc \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo ==========code end========== && del \"$fileNameWithoutExt.exe\"",
+            "cpp": "cd \"$dir\" && echo \n==========code start========== && g++ \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo ==========code end========== && del \"$fileNameWithoutExt.exe\"",
             "python": "echo \n==========code start========== && python -u \"$file\" && echo ==========code end==========",
             "ruby": "echo \n==========code start========== && ruby \"$file\" && echo ==========code end==========",
             "go": "echo \n==========code start========== && go run \"$file\" && echo ==========code end=========="
@@ -23,8 +23,8 @@
     "code-runner.executorMap": {
         "javascript": "echo '\n==========code start==========' && node \"$file\" && echo '==========code end=========='",
         "java": "cd \"$dir\" && echo '\n==========code start==========' && javac \"$fileName\" && java \"$fileNameWithoutExt\" && echo '==========code end==========' && rm -f *.class",
-        "c": "cd \"$dir\" && echo '\n==========code start==========' && gcc \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '==========code end=========='",
-        "cpp": "cd \"$dir\" && echo '\n==========code start==========' && g++ \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '==========code end=========='",
+        "c": "cd \"$dir\" && echo '\n==========code start==========' && gcc \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '==========code end==========' && rm -f \"$dir$fileNameWithoutExt\"",
+        "cpp": "cd \"$dir\" && echo '\n==========code start==========' && g++ \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '==========code end==========' && rm -f \"$dir$fileNameWithoutExt\"",
         "python": "echo '\n==========code start==========' && python -u \"$file\" && echo '==========code end=========='",
         "ruby": "echo '\n==========code start==========' && ruby \"$file\" && echo '==========code end=========='",
         "go": "echo '\n==========code start==========' && go run \"$file\" && echo '==========code end=========='"
