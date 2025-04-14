@@ -1,1 +1,48 @@
-.class
+# 컴파일된 실행 파일
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+
+# 빌드 디렉토리
+build/
+Debug/
+Release/
+x64/
+x86/
+bin/
+obj/
+
+# VS Code 설정은 포함
+# .vscode/ - 이 부분을 주석 처리하여 .vscode 디렉토리를 포함
+
+# 임시 파일
+*.log
+*.tlog
+*.cache
+*.tmp
+.DS_Store
+*~
+*.swp
+
+# 기타 컴파일러 생성 파일
+*.pdb
+*.ilk
+*.elf
+*.map
+*.exp
+*.gch
+*.pch
+*.manifest
+*.res
+*.idb
+
+# 자동 생성 파일
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile

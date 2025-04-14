@@ -9,7 +9,8 @@
     // Windows 설정
     "code-runner.executorMapByGlob": {
         "$isWindows": {
-            "javascript": "echo \n==========code start========== && node \"$file\" && echo ==========code end==========",
+            "javascript": "cd \"$dir\" && echo '\n==========code start==========' && node \"$fileName\" && echo '==========code end=========='",
+            "typescript": "cd \"$dir\" && echo \n==========code start========== && tsc \"$fileName\" && node \"$fileNameWithoutExt.js\" && echo ==========code end========== && del /f \"$fileNameWithoutExt.js\"",
             "java": "cd \"$dir\" && echo \n==========code start========== && javac \"$fileName\" && java \"$fileNameWithoutExt\" && echo ==========code end========== && del /f *.class",
             "c": "cd \"$dir\" && echo \n==========code start========== && gcc \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo ==========code end========== && del \"$fileNameWithoutExt.exe\"",
             "cpp": "cd \"$dir\" && echo \n==========code start========== && g++ \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo ==========code end========== && del \"$fileNameWithoutExt.exe\"",
@@ -21,7 +22,8 @@
     
     // Mac/Linux 설정 (기본값)
     "code-runner.executorMap": {
-        "javascript": "echo '\n==========code start==========' && node \"$file\" && echo '==========code end=========='",
+        "javascript": "cd \"$dir\" && echo '\n==========code start==========' && node \"$fileName\" && echo '==========code end=========='",
+        "typescript": "cd \"$dir\" && echo '\n==========code start==========' && tsc \"$fileName\" && node \"$fileNameWithoutExt.js\" && echo '==========code end==========' && rm -f \"$dir$fileNameWithoutExt.js\"",
         "java": "cd \"$dir\" && echo '\n==========code start==========' && javac \"$fileName\" && java \"$fileNameWithoutExt\" && echo '==========code end==========' && rm -f *.class",
         "c": "cd \"$dir\" && echo '\n==========code start==========' && gcc \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '==========code end==========' && rm -f \"$dir$fileNameWithoutExt\"",
         "cpp": "cd \"$dir\" && echo '\n==========code start==========' && g++ \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\" && echo '==========code end==========' && rm -f \"$dir$fileNameWithoutExt\"",
