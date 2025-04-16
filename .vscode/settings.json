@@ -6,18 +6,19 @@
     "code-runner.ignoreSelection": true, // 선택된 코드가 없을 때에도 실행합니다. false로 설정하면 선택된 코드가 없을 때에는 실행하지 않습니다.
     "code-runner.saveFileBeforeRun": true, // 파일을 저장한 후 실행합니다. false로 설정하면 저장하지 않고 실행합니다.
     "code-runner.showExecutionMessage": false, // 실행 후 메시지를 표시합니다. true로 설정하면 메시지를 표시합니다.
+
     
     // Windows 설정
     "code-runner.executorMapByGlob": {
         "$isWindows": {
-            "javascript": "cd '$dir' && echo '==========code start==========' && node '$fileName' && echo '==========code end==========' ",
-            "typescript": "cd '$dir' && echo '==========code start==========' && tsc '$fileName' && node '$fileNameWithoutExt.js' && echo '==========code end==========' && del /f '$fileNameWithoutExt.js'",
-            "java": "cd '$dir' && echo '==========code start==========' && javac '$fileName' && java '$fileNameWithoutExt' && echo '==========code end==========' && del /f *.class",
-            "c": "cd '$dir' && echo '==========code start==========' && gcc '$fileName' -o '$fileNameWithoutExt.exe' && '$fileNameWithoutExt.exe' && echo '==========code end==========' && del '$fileNameWithoutExt.exe'",
-            "cpp": "cd '$dir' && echo '==========code start==========' && g++ '$fileName' -o '$fileNameWithoutExt.exe' && '$fileNameWithoutExt.exe' && echo '==========code end==========' && del '$fileNameWithoutExt.exe'",
-            "python": "echo '==========code start==========' && python3 -u '$file' && echo '==========code end=========='",
-            "ruby": "echo '==========code start==========' && ruby '$file' && echo '==========code end=========='",
-            "go": "echo '==========code start==========' && go run '$file' && echo '==========code end=========='"
+            "javascript": "cd /d %dir% && echo ==========code start========== && node %fileName% && echo ==========code end==========",
+            "typescript": "cd /d %dir% && echo ==========code start========== && tsc %fileName% && node %fileNameWithoutExt%.js && echo ==========code end========== && del %fileNameWithoutExt%.js",
+            "java": "cd /d %dir% && echo ==========code start========== && javac %fileName% && java %fileNameWithoutExt% && echo ==========code end========== && del *.class",
+            "c": "cd /d %dir% && echo ==========code start========== && gcc %fileName% -o %fileNameWithoutExt%.exe && %fileNameWithoutExt%.exe && echo ==========code end========== && del %fileNameWithoutExt%.exe",
+            "cpp": "cd /d %dir% && echo ==========code start========== && g++ %fileName% -o %fileNameWithoutExt%.exe && %fileNameWithoutExt%.exe && echo ==========code end========== && del %fileNameWithoutExt%.exe",
+            "python": "echo ==========code start========== && python -u %file% && echo ==========code end==========",
+            "ruby": "echo ==========code start========== && ruby %file% && echo ==========code end==========",
+            "go": "echo ==========code start========== && go run %file% && echo ==========code end=========="
         }
     },
     
