@@ -9,17 +9,17 @@
 
     
     // Windows 설정
-    // Windows 설정
+    "code-runner.terminal.windows": "cmd.exe",
     "code-runner.executorMapByGlob": {
         "$isWindows": {
-        "javascript": "cd /d %dir% && echo ==========code start========== && node %fileName% && echo ==========code end==========",
-        "typescript": "cd /d %dir% && echo ==========code start========== && tsc %fileName% && node %fileNameWithoutExt%.js && echo ==========code end========== && del %fileNameWithoutExt%.js",
-        "java": "cd /d %dir% && echo ==========code start========== && javac %fileName% && java %fileNameWithoutExt% && echo ==========code end========== && del *.class",
-        "c": "cd /d %dir% && echo ==========code start========== && gcc %fileName% -o %fileNameWithoutExt%.exe && %fileNameWithoutExt%.exe && echo ==========code end========== && del %fileNameWithoutExt%.exe",
-        "cpp": "cd /d %dir% && echo ==========code start========== && g++ %fileName% -o %fileNameWithoutExt%.exe && %fileNameWithoutExt%.exe && echo ==========code end========== && del %fileNameWithoutExt%.exe",
-        "python": "cd /d %dir% && echo ==========code start========== && python -u %file% && echo ==========code end==========",
-        "ruby": "cd /d %dir% && echo ==========code start========== && ruby %file% && echo ==========code end==========",
-        "go": "cd /d %dir% && echo ==========code start========== && go run %file% && echo ==========code end=========="
+            "javascript": "cd %dir%; echo ==========code start==========; node %fileName%; echo ==========code end==========",
+            "typescript": "cd %dir%; echo ==========code start==========; tsc %fileName%; node %fileNameWithoutExt%.js; echo ==========code end==========; Remove-Item %fileNameWithoutExt%.js",
+            "java": "cd %dir%; echo ==========code start==========; javac %fileName%; java %fileNameWithoutExt%; echo ==========code end==========; Remove-Item *.class",
+            "c": "cd %dir%; echo ==========code start==========; gcc %fileName% -o %fileNameWithoutExt%.exe; ./%fileNameWithoutExt%.exe; echo ==========code end==========; Remove-Item %fileNameWithoutExt%.exe",
+            "cpp": "cd %dir%; echo ==========code start==========; g++ %fileName% -o %fileNameWithoutExt%.exe; ./%fileNameWithoutExt%.exe; echo ==========code end==========; Remove-Item %fileNameWithoutExt%.exe",
+            "python": "cd %dir%; echo ==========code start==========; python -u %file%; echo ==========code end==========",
+            "ruby": "cd %dir%; echo ==========code start==========; ruby %file%; echo ==========code end==========",
+            "go": "cd %dir%; echo ==========code start==========; go run %file%; echo ==========code end=========="
         }
     },
     
