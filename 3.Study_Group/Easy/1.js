@@ -16,5 +16,6 @@ function countWithDelay() { //1. 숫자랑 기다리기 같이하는 그런거�
     
     console.log("카운트 함수 종료"); //4. ? 여기서 이게 먼저 실행이 이 되네?
   }
-  
+
+// FIX: 이거 스코핑으로 처리해야함
 countWithDelay();//2. 여기서 실행이 되네?
